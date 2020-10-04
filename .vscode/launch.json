@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "name": "Run",
+            "request": "launch",
+            "mainClass": "Main"
+        }
+    ]
+}
