@@ -1,4 +1,8 @@
 
+import java.math.BigInteger;
+
+import common.Sequences;
+import common.Utilities;
 import euler.*;
 
 public class Main {
@@ -24,7 +28,9 @@ public class Main {
     // Problem21.solve(10_000);
     // Problem22.solve("src\\main\\res\\p022_names.txt");
     // Problem23.solve();
-    Problem24.solve();
+    // Problem24.solve();
+    Problem25.solve();
+
 
   }
 }

@@ -30,6 +30,9 @@ public class Sequences {
     return ret;
   }
 
+  /**
+   * Returns all permutations of the given list in a lexicographic order
+   */
   public static List<List<Long>> permutations(final List<Long> list) {
     final List<List<Long>> ret = new ArrayList<>();
 
@@ -41,7 +44,6 @@ public class Sequences {
 
     final List<Long> sorted = list.stream().sorted().collect(Collectors.toList());
 
-
     for (int i = 0; i < sorted.size(); i++) {
       final List<Long> sublist = new ArrayList<>(sorted);
       sublist.remove(i);
@@ -51,6 +53,39 @@ public class Sequences {
         ret.add(combo);
       }
     }
+
+    return ret;
+  }
+
+
+  /**
+   * Returns the first n fibonacci numbers
+   */
+  public static List<Long> fibonacci(final int n) {
+
+    if (n < 0) throw new IllegalArgumentException("Negative number provided for fibonacci series");
+
+    List<Long> ret = new ArrayList<>();
+
+    if (n == 0) {
+      return ret;
+    }
+
+    if (n == 1) {
+      ret.add(1L);
+      return ret;
+
+    }
+    
+    if (n == 2) {
+      ret.add(1L);
+      ret.add(1L);
+      return ret;
+    }
+
+    ret = fibonacci(n-1);
+
+    ret.add(ret.get(n-2) + ret.get(n-3));
 
     return ret;
   }

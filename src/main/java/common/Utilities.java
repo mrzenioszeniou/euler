@@ -1,5 +1,6 @@
 package common;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -79,6 +80,22 @@ public class Utilities {
   public static boolean amicable(final long x, final long y) {
     return divisors(x).stream().mapToLong(n->n).sum() == y
         && divisors(y).stream().mapToLong(n->n).sum() == x;
+  }
+
+  /**
+   * Returns the number of decimal digits in the provided big integer
+   */
+  public static long countDigits(final BigInteger n) {
+    long ret = 1;
+    BigInteger number = n;
+    final BigInteger ten = BigInteger.valueOf(10);
+
+    while (number.compareTo(ten) >= 0) {
+      number = number.divide(ten);
+      ret += 1;
+    }
+
+    return ret;
   }
 
 }
